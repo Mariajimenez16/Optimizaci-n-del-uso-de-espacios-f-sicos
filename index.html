@@ -84,9 +84,231 @@
         }
 
         .main-container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 2rem auto;
             padding: 0 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 2rem;
+        }
+
+        .left-content {
+            min-width: 0;
+        }
+
+        .right-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sidebar-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .sidebar-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-header p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .role-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .role-button {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .role-button:hover::before {
+            left: 100%;
+        }
+
+        .role-button:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .role-button.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .role-button.active .role-info h4,
+        .role-button.active .role-info p {
+            color: white;
+        }
+
+        .role-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .student-icon {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .teacher-icon {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .admin-icon {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .role-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .role-info h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .role-info p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .role-features {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-header {
+            margin-bottom: 1rem;
+        }
+
+        .selected-role-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .features-placeholder {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-style: italic;
+            padding: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--text);
+        }
+
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .report-damage-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border: none;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        .report-damage-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .report-damage-btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-icon {
+            font-size: 1.5rem;
         }
 
         .intro-card {
@@ -477,6 +699,14 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .right-sidebar {
+                position: static;
+            }
+
             .main-container {
                 padding: 0 1rem;
             }
@@ -504,6 +734,192 @@
             .modal-header h2 {
                 font-size: 1.5rem;
             }
+        }
+
+        /* Report Modal Styles */
+        .report-modal {
+            max-width: 700px;
+        }
+
+        .report-header {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            font-family: 'Outfit', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .file-upload-area {
+            position: relative;
+        }
+
+        .file-upload-area input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 2rem;
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            border-color: var(--primary);
+            background: #eff6ff;
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+        }
+
+        .upload-text {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .image-preview {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .image-preview.active {
+            display: block;
+        }
+
+        .image-preview img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid var(--border);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 0.875rem 1.75rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border: 2px solid #10b981;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message.active {
+            display: block;
+            animation: slideUp 0.4s ease;
+        }
+
+        .success-message h3 {
+            color: #065f46;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: #047857;
+            font-size: 0.9375rem;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         /* Loading Animation */
@@ -557,30 +973,83 @@
     </header>
 
     <div class="main-container">
-        <div class="intro-card fade-in">
-            <h2>Explora Nuestro Campus</h2>
-            <p>Haz clic en cualquier bloque del mapa para conocer los salones disponibles, su capacidad, equipamiento tecnológico y ubicación exacta. Navega de forma intuitiva y encuentra el espacio perfecto para tu clase o actividad académica.</p>
-            
-            <div class="legend">
-                <div class="legend-item">
-                    <div class="legend-icon vehicular">V</div>
-                    <span>Ingreso Vehicular</span>
+        <div class="content-grid">
+            <div class="left-content">
+                <div class="intro-card fade-in">
+                    <h2>Explora Nuestro Campus</h2>
+                    <p>Haz clic en cualquier bloque del mapa para conocer los salones disponibles, su capacidad, equipamiento tecnológico y ubicación exacta. Navega de forma intuitiva y encuentra el espacio perfecto para tu clase o actividad académica.</p>
+                    
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-icon vehicular">V</div>
+                            <span>Ingreso Vehicular</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon peatonal">P</div>
+                            <span>Ingreso Peatonal</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon banos">B</div>
+                            <span>Baños</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-icon peatonal">P</div>
-                    <span>Ingreso Peatonal</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-icon banos">B</div>
-                    <span>Baños</span>
+
+                <div class="map-container fade-in">
+                    <div class="map-wrapper">
+                        <img src="assets/mapa.jpeg" alt="Mapa del Campus" class="map-image" id="campusMap">
+                        <div class="map-overlay" id="mapOverlay"></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="map-container fade-in">
-            <div class="map-wrapper">
-                <img src="assets/mapa.jpeg" alt="Mapa del Campus" class="map-image" id="campusMap">
-                <div class="map-overlay" id="mapOverlay"></div>
+            <div class="right-sidebar fade-in">
+                <div class="sidebar-card">
+                    <div class="sidebar-header">
+                        <h3>Control de Acceso</h3>
+                        <p>Selecciona tu rol para acceder</p>
+                    </div>
+
+                    <div class="role-selector">
+                        <button class="role-button" data-role="student" onclick="selectRole('student')">
+                            <div class="role-icon student-icon">🎓</div>
+                            <div class="role-info">
+                                <h4>Estudiante</h4>
+                                <p>Consultar salones</p>
+                            </div>
+                        </button>
+
+                        <button class="role-button" data-role="teacher" onclick="selectRole('teacher')">
+                            <div class="role-icon teacher-icon">👨‍🏫</div>
+                            <div class="role-info">
+                                <h4>Docente</h4>
+                                <p>Gestionar espacios</p>
+                            </div>
+                        </button>
+
+                        <button class="role-button" data-role="admin" onclick="selectRole('admin')">
+                            <div class="role-icon admin-icon">🛠️</div>
+                            <div class="role-info">
+                                <h4>Administrador</h4>
+                                <p>Control total</p>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="role-features" id="roleFeatures">
+                        <div class="features-header">
+                            <span class="selected-role-badge" id="selectedRoleBadge">Selecciona un rol</span>
+                        </div>
+                        <div class="features-list" id="featuresList">
+                            <p class="features-placeholder">Elige tu rol para ver las funcionalidades disponibles</p>
+                        </div>
+                    </div>
+
+                    <button class="report-damage-btn" onclick="openReportModal()">
+                        <span class="btn-icon">⚠️</span>
+                        <span class="btn-text">Reportar Daño</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -597,6 +1066,114 @@
             </div>
             <div class="modal-body">
                 <div class="classrooms-grid" id="classroomsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Damage Modal -->
+    <div class="modal" id="reportModal">
+        <div class="modal-content report-modal">
+            <div class="modal-header report-header">
+                <h2>
+                    <span>⚠️</span>
+                    <span>Reportar Daño</span>
+                </h2>
+                <button class="close-button" onclick="closeReportModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="reportForm" onsubmit="submitReport(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="reportBlock">Bloque *</label>
+                            <select id="reportBlock" required>
+                                <option value="">Seleccionar bloque</option>
+                                <option value="1">Bloque 1</option>
+                                <option value="2">Bloque 2</option>
+                                <option value="3">Bloque 3</option>
+                                <option value="4">Bloque 4</option>
+                                <option value="5">Bloque 5</option>
+                                <option value="6">Bloque 6</option>
+                                <option value="7">Bloque 7</option>
+                                <option value="8">Bloque 8</option>
+                                <option value="9">Bloque 9</option>
+                                <option value="10">Bloque 10</option>
+                                <option value="11">Bloque 11</option>
+                                <option value="12">Bloque 12</option>
+                                <option value="13">Bloque 13</option>
+                                <option value="14">Bloque 14</option>
+                                <option value="15">Bloque 15</option>
+                                <option value="16">Bloque 16</option>
+                                <option value="17">Bloque 17</option>
+                                <option value="18">Bloque 18</option>
+                                <option value="19">Bloque 19</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportFloor">Piso *</label>
+                            <select id="reportFloor" required>
+                                <option value="">Seleccionar piso</option>
+                                <option value="1">Piso 1</option>
+                                <option value="2">Piso 2</option>
+                                <option value="3">Piso 3</option>
+                                <option value="4">Piso 4</option>
+                                <option value="5">Piso 5</option>
+                                <option value="6">Piso 6</option>
+                                <option value="7">Piso 7</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportRoom">Número de Salón/Laboratorio *</label>
+                            <input type="text" id="reportRoom" placeholder="Ej: 501" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportType">Tipo de Daño *</label>
+                            <select id="reportType" required onchange="toggleOtherField()">
+                                <option value="">Seleccionar tipo</option>
+                                <option value="videobeam">📽️ Videobeam</option>
+                                <option value="computador">💻 Computador</option>
+                                <option value="furniture">🪑 Sillas o Mesas</option>
+                                <option value="lighting">💡 Iluminación</option>
+                                <option value="ac">❄️ Aire Acondicionado</option>
+                                <option value="audio">🔊 Sistema de Audio</option>
+                                <option value="screen">🖥️ Pantalla</option>
+                                <option value="other">✏️ Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="otherDamageGroup" style="display: none;">
+                        <label for="otherDamage">Especificar Otro Tipo de Daño</label>
+                        <input type="text" id="otherDamage" placeholder="Describe el tipo de daño">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reportDescription">Descripción del Problema *</label>
+                        <textarea id="reportDescription" rows="4" placeholder="Describe brevemente el daño encontrado..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reportImage">Adjuntar Imagen (Opcional)</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="reportImage" accept="image/*" onchange="previewImage(event)">
+                            <label for="reportImage" class="file-upload-label">
+                                <span class="upload-icon">📷</span>
+                                <span class="upload-text">Haz clic para seleccionar una imagen</span>
+                            </label>
+                            <div id="imagePreview" class="image-preview"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeReportModal()">Cancelar</button>
+                        <button type="submit" class="btn-primary">
+                            <span>Enviar Reporte</span>
+                            <span>📤</span>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -891,6 +1468,165 @@
 
         // Initialize on load
         window.addEventListener('load', initializeMap);
+
+        // Role management
+        let currentRole = null;
+
+        const roleFeatures = {
+            student: [
+                { icon: '🔍', text: 'Consultar disponibilidad de salones' },
+                { icon: '📚', text: 'Ver información de aulas y laboratorios' },
+                { icon: '⚠️', text: 'Reportar daños en espacios' }
+            ],
+            teacher: [
+                { icon: '🔍', text: 'Consultar salones y laboratorios' },
+                { icon: '📊', text: 'Ver capacidad y recursos tecnológicos' },
+                { icon: '⚠️', text: 'Reportar daños en espacios asignados' },
+                { icon: '📅', text: 'Gestionar reservas de aulas' }
+            ],
+            admin: [
+                { icon: '🏢', text: 'Acceso completo a todos los bloques' },
+                { icon: '⚙️', text: 'Gestión de salones y laboratorios' },
+                { icon: '📋', text: 'Visualizar todos los reportes de daños' },
+                { icon: '🔧', text: 'Actualizar estado de espacios' },
+                { icon: '📊', text: 'Análisis y estadísticas del campus' }
+            ]
+        };
+
+        function selectRole(role) {
+            currentRole = role;
+            
+            // Update active button
+            document.querySelectorAll('.role-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-role="${role}"]`).classList.add('active');
+
+            // Update role badge
+            const roleNames = {
+                student: '🎓 Estudiante',
+                teacher: '👨‍🏫 Docente',
+                admin: '🛠️ Administrador'
+            };
+            document.getElementById('selectedRoleBadge').textContent = roleNames[role];
+
+            // Update features list
+            const featuresList = document.getElementById('featuresList');
+            const features = roleFeatures[role];
+            
+            featuresList.innerHTML = features.map(feature => `
+                <div class="feature-item">
+                    <div class="feature-icon">${feature.icon}</div>
+                    <span>${feature.text}</span>
+                </div>
+            `).join('');
+        }
+
+        // Report Modal Functions
+        function openReportModal() {
+            if (!currentRole) {
+                alert('Por favor, selecciona tu rol antes de reportar un daño.');
+                return;
+            }
+            
+            if (currentRole === 'admin') {
+                alert('Como administrador, puedes acceder a todos los reportes. Esta función es principalmente para estudiantes y docentes.');
+                return;
+            }
+
+            document.getElementById('reportModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeReportModal() {
+            document.getElementById('reportModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            document.getElementById('reportForm').reset();
+            document.getElementById('imagePreview').classList.remove('active');
+            document.getElementById('imagePreview').innerHTML = '';
+            document.getElementById('otherDamageGroup').style.display = 'none';
+        }
+
+        function toggleOtherField() {
+            const reportType = document.getElementById('reportType').value;
+            const otherGroup = document.getElementById('otherDamageGroup');
+            
+            if (reportType === 'other') {
+                otherGroup.style.display = 'block';
+            } else {
+                otherGroup.style.display = 'none';
+            }
+        }
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('imagePreview');
+                    preview.innerHTML = `<img src="${e.target.result}" alt="Vista previa">`;
+                    preview.classList.add('active');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function submitReport(event) {
+            event.preventDefault();
+            
+            const formData = {
+                role: currentRole,
+                block: document.getElementById('reportBlock').value,
+                floor: document.getElementById('reportFloor').value,
+                room: document.getElementById('reportRoom').value,
+                damageType: document.getElementById('reportType').value,
+                otherDamage: document.getElementById('otherDamage').value,
+                description: document.getElementById('reportDescription').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Simulate API call
+            console.log('Reporte enviado:', formData);
+            
+            // Show success message
+            const modalBody = document.querySelector('#reportModal .modal-body');
+            modalBody.innerHTML = `
+                <div class="success-message active">
+                    <div class="success-icon">✅</div>
+                    <h3>¡Reporte Enviado Exitosamente!</h3>
+                    <p>Gracias por ayudarnos a mejorar el campus.</p>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; color: #047857;">
+                        Tu reporte ha sido registrado y será atendido a la brevedad posible.
+                    </p>
+                </div>
+            `;
+
+            // Close modal after 3 seconds
+            setTimeout(() => {
+                closeReportModal();
+                // Reset form HTML
+                modalBody.innerHTML = document.getElementById('reportForm').outerHTML;
+            }, 3000);
+        }
+
+        // Close modals on outside click
+        document.getElementById('reportModal').addEventListener('click', (e) => {
+            if (e.target.id === 'reportModal') {
+                closeReportModal();
+            }
+        });
+
+        // Close modals on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (document.getElementById('buildingModal').classList.contains('active')) {
+                    closeModal();
+                }
+                if (document.getElementById('reportModal').classList.contains('active')) {
+                    closeReportModal();
+                }
+            }
+        });
     </script>
 </body>
 </html>
